@@ -32,6 +32,8 @@ include_directories(include SYSTEM ${PCL_INCLUDE_DIRS} ${rs_driver_INCLUDE_DIRS}
 
 add_library(rs_lidar_components SHARED
   src/lidar_pub.cpp
+  src/point_cloud_render.cpp
+  src/lidar_viz.cpp
 )
 
 target_compile_definitions(rs_lidar_components
@@ -49,6 +51,7 @@ target_link_libraries(rs_lidar_components
 )
 
 rclcpp_components_register_node(rs_lidar_components PLUGIN "rs_lidar::LIDARPub" EXECUTABLE lidar_pub)
+rclcpp_components_register_node(rs_lidar_components PLUGIN "rs_lidar::LIDARViz" EXECUTABLE lidar_viz)
 
 
 install(TARGETS
