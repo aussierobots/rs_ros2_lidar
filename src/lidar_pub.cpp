@@ -29,6 +29,7 @@ public:
   : Node("lidar_pub", options)
   {
     auto qos = rclcpp::SensorDataQoS();
+    qos.reliable();
 
     RCLCPP_INFO(this->get_logger(), "RS_Driver Core Version: V %d.%d.%d",
         RSLIDAR_VERSION_MAJOR,

@@ -28,6 +28,7 @@ public:
 
 
     auto qos = rclcpp::SensorDataQoS();
+    qos.reliable();
 
     string pc_topic_param_name = "point_cloud_topic";
     string pc_topic_value = "/lidar_point_cloud";
