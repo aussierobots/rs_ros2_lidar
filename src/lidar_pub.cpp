@@ -164,6 +164,6 @@ private:
   }
 };
 
-} // end namespace car_capture
+} // end namespace rs_lidar
 
 RCLCPP_COMPONENTS_REGISTER_NODE(rs_lidar::LIDARPub)
