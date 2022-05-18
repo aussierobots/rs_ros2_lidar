@@ -25,16 +25,18 @@ find_package(sensor_msgs REQUIRED)
 
 find_package(Boost COMPONENTS system REQUIRED)
 find_package(pcl_conversions REQUIRED)
-find_package(PCL 1.10 REQUIRED)
+find_package(PCL REQUIRED)
+find_package(Boost REQUIRED COMPONENTS system date_time regex)
 find_package(rs_driver REQUIRED)
 
-include_directories(include SYSTEM ${PCL_INCLUDE_DIRS} ${rs_driver_INCLUDE_DIRS})
+include_directories(include SYSTEM ${PCL_COMMON_INCLUDE_DIRS} ${rs_driver_INCLUDE_DIRS})
 
 add_library(rs_lidar_components SHARED
   src/lidar_pub.cpp
   src/point_cloud_render.cpp
   src/lidar_viz.cpp
 )
+ament_generate_version_header(rs_lidar_components)
 
 target_compile_definitions(rs_lidar_components
   PRIVATE "RS_LIDAR_BUILDING_DLL")
