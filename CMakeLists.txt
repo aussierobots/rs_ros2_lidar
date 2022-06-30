@@ -45,6 +45,7 @@ ament_target_dependencies(rs_lidar_components
   rclcpp
   rclcpp_components
   sensor_msgs
+  pcl_conversions
 )
 
 target_link_libraries(rs_lidar_components
