@@ -25,7 +25,7 @@ find_package(sensor_msgs REQUIRED)
 
 find_package(Boost COMPONENTS system REQUIRED)
 find_package(pcl_conversions REQUIRED)
-find_package(PCL REQUIRED)
+find_package(PCL 1.12 REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system date_time regex)
 find_package(rs_driver REQUIRED)
 
